@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.CreateUser{
+    background-color: #550a6d;
+    height: 100vh;
+    width:100vw;
+    margin-top:-20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.CreateUser img{
+    height: 120vh;
+    width: 100vw;
+    
+}
+
+
+.CreateUserDiv{
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(10px);
+    // background-color: #feb7d6;
+    height:70%;
+    width:40%;
+    // border:2px solid rgb(151, 94, 9);
+    margin:auto;
+}
+
+// .CreateUserImage{
+//     height:40%;
+//     display: flex;
+//     align-items: center;
+//     text-align: center;
+//     justify-content: center;
+// }
+
+.CreateUserText{
+    height:90%;
+    margin-top: 5%;;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+
+.userInput{
+    display: block;
+    margin-bottom:1.5rem;
+    width:80%;
+    border-radius: 10px;
+    height:20px;
+    background-color: transparent;
+    height: 30px;
+    // background-color:red;
+    background-image: linear-gradient(to right, rgb(151, 34, 5), rgb(61, 24, 3));
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    color: #eaeaea;
+}
+
+.userInput::placeholder{
+    text-indent:10px;
+  color: #f7efef;
+}
+
+.createUserGender{
+    margin-left:4px;
+}
+
+.createUserGender label {
+    color:black;
+    padding: 2px;
+    display: inline-block;
+    height:26px;
+    margin-left: 20px;
+    margin-right: 25px; 
+    border-radius: 7px;
+    background-image: linear-gradient(to right,rgb(153, 5, 96),rgb(225, 96, 241));
+}
+
+.createUserGenderLabel{
+    padding: 2px;
+    display: inline-block;
+    height:26px;
+    background-image: linear-gradient(to right, rgb(151, 34, 5), rgb(61, 24, 3));
+    color: #f7efef;
+    border-radius: 7px;
+    
+}
+
+
+
+.userButton{
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    margin-left: 32%;
+    height: 40px;
+    width: 100px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right, rgba(29, 119, 131, 0.911), rgb(6, 62, 99));
+    color: #eaeaea;
+    margin-bottom: 1rem;
+}

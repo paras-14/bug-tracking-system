@@ -1,0 +1,102 @@
+
+.navbar{
+    padding:0;
+    display:flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content:space-between;
+    // background-color: rgba(228, 199, 199, 0.5); 
+    // backdrop-filter: blur(10px);
+    background-color: transparent;
+    border-radius: 20px;
+    color: aliceblue;
+    position: absolute;
+    z-index: 111111;
+    width: 100vw;
+    margin-top: 10px;
+    // width: 95%;
+    // margin-left: 2.5%;
+    // filter: blur(10px);
+    // border-radius: 50%;
+}
+
+.overlay2 {
+    position: absolute;
+    top: -10px;
+    // left: 0;
+    width: 100%;
+    height: 10rem;
+    z-index: -1;
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),;
+  }
+
+.leftNav img{
+    position: absolute;
+    margin-left:15px;
+    width: 60px;
+    height:60px;
+    cursor: pointer;
+    // padding:1.1rem;
+}
+
+.middleNav{
+    padding:1.1rem;
+    margin-left:15%;
+}
+.rightNav{
+    display: flex;
+    cursor: pointer;
+}
+
+ul{
+    display:flex;
+    gap:10%;
+    list-style-type:none;
+    margin-right:100px;
+    justify-content: space-evenly;
+    margin-top: 17px;
+}
+
+.dropdown-menu{
+    display:block;
+    position:absolute;
+    margin-top:0.7%;
+    height:50px;
+    width:120px;
+    border:1px solid #550a6d;
+    background-color:#e33d89;
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+
+
+.anchors{
+    text-decoration: none;
+    color: aliceblue
+}
+
+
+.auth {
+    padding:0.5rem;
+    margin-top: 0.5rem;
+    margin-right:2rem;
+    background-color: transparent;
+    color: white;
+    // text-decoration: none;
+}
+
+.auth:a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.auth a:hover{
+    color:red;
+}
+
+.auth a:visited {
+    color: inherit; 
+}
+
+

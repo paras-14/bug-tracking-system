@@ -1,0 +1,98 @@
+
+.ProjectCard{
+    // background-color: #feb7d6;
+    // margin:auto;
+    // height:600px;
+    // width:600px;
+    // border:2px solid red;
+    // display:flex;
+    // flex-direction: column;
+    background-color: #e33d89;
+    width: 400px;
+    height: 400px;
+    margin-top: 40px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(37px);
+    box-shadow: -20px 20px 20px black;
+}
+.ProjectCardImage{
+    height:40%;
+}
+.tempProjectCardImage1{
+    position:absolute;
+    top:50%;
+    left:25%;
+    // border: 2px solid red;
+    height:300px;
+    width:300px;
+    background-image: url("../../assets/floral-background_52683-2191-removebg-preview.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.ProjectCardText{
+    width: 80%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+.getProjectInput{
+    color: aliceblue;
+    margin-left: 1.5rem;
+      padding: 5px;
+      display: block;
+      width: 80%;
+      border-radius: 10px;
+    //   height: 23px;
+      background-color: transparent;
+      height: 30px;
+      // background-color:red;
+      background-image: linear-gradient(
+        to right,
+        rgb(28, 5, 128),
+        rgb(14, 75, 241)
+      );
+      border: none;
+      outline: none;
+      margin-bottom: 1.5rem;
+}
+.projectButtons{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height:10.5rem;
+    // border: 2px solid red;
+}
+.viewMore{
+    position:absolute;
+    color:rgb(238, 34, 187);
+    height:60px;
+    width: 60px;
+    font-size: 2rem;
+    // border:2px solid red;
+    top:21%;
+    left:85%;
+}
+.addProjectMember,
+.editProjectMember,
+.deleteProjectMember{
+    margin-left: 1rem;
+    // z-index: 1;
+    outline: none;
+    border: none;
+    // margin-left: 7rem;
+    height: 40px;
+    width: 90px;
+    background-color: transparent;
+    border-radius: 20px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right, rgba(214, 8, 180, 0.911), rgb(170, 159, 3));
+    color: #eaeaea;
+    margin-bottom: 1rem;
+}
+.editProjectMember{
+    background-image: linear-gradient(to right, rgba(8, 149, 214, 0.911), rgb(170, 159, 3));
+}
+
+.deleteProjectMember{
+    background-image: linear-gradient(to right, rgba(143, 7, 7, 0.911), rgb(170, 159, 3));
+}

@@ -1,0 +1,109 @@
+.signupContainer{
+    background-image: url("../../assets/signup3.webp");
+    background-size:cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    background-position:center top;
+    // background-image:linear-gradient(0,0,0,0.7);
+    // background-color: black;
+    // opacity: 0.7; /* Adjust the opacity as desired */
+    // backdrop-filter: blur(8px); /* Adjust the blur radius as desired */
+    z-index: -1; /* To place the pseudo-element behind the content */
+}
+
+
+.Signup{
+    // background-color:#feb7d6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:500px;
+    height:550px;
+    transform: translate(-50%,-50%);
+    box-shadow: -60px 30px 70px rgb(0,0,0);
+    // margin:3rem auto;
+}
+
+.SignupImg{
+    height:45%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SignupImg img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    // background-size: contain;
+}
+
+.SignupText{
+    padding-top: 4rem;
+    padding-left: 4rem;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(7px); /* Adjust the blur radius as desired */
+    border-radius: 15px;
+    height:55%;
+}
+.signUpinput{
+    display: block;
+    margin-bottom:1rem;
+    width:80%;
+    border-radius: 10px;
+    height:20px;
+    background-color: transparent;
+    height: 30px;
+    // background-color:red;
+    background-image: linear-gradient(to right,rgba(255,205,63,255),rgb(223, 123, 9));
+    border: none;
+    outline: none;
+}
+.signUpinput::placeholder{
+    text-indent:10px;
+    color: #f7efef;
+}
+.signupBUTTONS{
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    color:#eaeaea
+}
+.signupbtn{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 70px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right, rgb(214, 6, 162), rgb(224, 10, 231));
+    color: #eaeaea;
+}
+
+
+.orgLeadbtn{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 110px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right,rgb(10, 114, 7), rgb(108, 252, 12));
+    color: #eaeaea;
+}
+
+.orgLeadbtn a{
+    color:inherit;
+}
+.OrgLead{
+    margin-top: 1rem;   
+}
+
+

@@ -1,0 +1,35 @@
+.bugCardContainer{
+    grid-template-columns: repeat(8,1fr);
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(18px);
+    top:25%;
+    border-radius: 30px;
+    display: grid;
+    height:3rem;
+    width:100%;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+    box-shadow: 10px 10px 30px black;
+}
+
+.getBugInput{
+    // position: absolute;
+    padding:0.9rem;
+}
+
+.bugButtons{
+    padding:0.9rem;
+}
+
+.bugButtons{
+    display:flex;
+    // gap:0.1rem;
+}
+.bugBtn{
+    height:20px;
+    margin-left: 3px;
+}
+
+.bugSpanColor{
+    color:red;
+}

@@ -1,0 +1,64 @@
+const mongoose=require("mongoose");
+const projectSchema=new mongoose.Schema({
+    type:{
+        type:String,
+        unique:false,
+    },
+    projectName:{
+        type:String,
+        min:2,
+        max:50,
+        unique:true
+    },
+    submissionDate:{
+        type:String,
+        unique:false,
+    },
+    duration:{
+        type:Number,
+        unique:false
+    },
+    clientName:{
+        type:String,
+        min:2,
+        max:50,
+        unique:false
+    },
+    clientAddress:{
+        type:String,
+        unique:false
+    },
+    clientPhone:{
+        type:Number,
+        unique:false
+    },
+    clientEmail:{
+        type:String,
+        unique:false,
+    },
+    leader:{
+        type:String,
+        unique:false
+    },
+    leaderEmail:{
+        type:String,
+        unique:false,
+    },
+    department:{
+        type:String,
+        unique:false
+    },
+    description:{
+        type:String,
+        unique:false,
+    },
+    members:{
+        type:Array,
+        unique:false,
+        default:[],
+    }
+},
+{timestamps:true}
+
+);
+module.exports = mongoose.model("Project",projectSchema);

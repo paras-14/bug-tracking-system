@@ -1,0 +1,132 @@
+.orgLeaderContainer{
+    background-image: url("../../assets/OrgLead.webp");
+    background-size:cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    background-position:center top -20px;
+    // background-image:linear-gradient(0,0,0,0.7);
+    // background-color: black;
+    // opacity: 0.7; /* Adjust the opacity as desired */
+    // backdrop-filter: blur(8px); /* Adjust the blur radius as desired */
+    z-index: -1; /* To place the pseudo-element behind the content */
+}
+
+
+.orgLead{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:500px;
+    height:550px;
+    transform: translate(-50%,-50%);
+    box-shadow: -60px 30px 70px rgb(0,0,0);
+}
+
+.OrgLeadImg{
+    height:45%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.OrgLeadImg img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    // background-size: contain;
+}
+
+.OrgLeadText{
+    padding-top: 3rem;
+    padding-left: 4rem;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(7px); /* Adjust the blur radius as desired */
+    // border-radius: 15px;
+    height:60%;
+}
+.orgInput{
+    display: block;
+    margin-bottom:1rem;
+    width:80%;
+    border-radius: 10px;
+    height:20px;
+    background-color: transparent;
+    height: 30px;
+    // background-color:red;
+    background-image: linear-gradient(to right,rgb(153, 134, 54),rgb(213, 197, 84));
+    border: none;
+    outline: none;
+}
+.orgInput::placeholder{
+    text-indent:10px;
+    color: #f7efef;
+}
+.genderContainer{
+    display: flex;
+}
+.orgGenderLabel{
+    border-radius: 10px;
+    // border: 2px solid red;   
+    height:20px;
+    width:80px;
+    background-image: linear-gradient(to right,rgb(153, 134, 54),rgb(213, 197, 84));
+    padding-left: 7px;
+    margin-bottom: 1rem;
+}
+
+.orgInputGender{
+    margin-left: 20px;
+}
+
+.orgInputGender label {
+    margin-right: 25px; 
+    border-radius: 7px;;
+    // border: 2px solid red;
+    background-image: linear-gradient(to right,rgb(90, 101, 102),rgb(213, 197, 84));
+}
+
+.orgBUTTONS{
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    color:#eaeaea
+}
+
+.ORGbtnnSUBMIT{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 70px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right,rgb(58, 201, 175), rgb(20, 49, 83));
+    color: #eaeaea;
+}
+
+.ORGbtnnSIGNUP{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 70px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right,rgb(204, 122, 65), rgb(109, 34, 32));
+    color: #eaeaea;
+}
+
+.ORGbtnnSIGNUP a{
+    color:inherit;
+}
+
+.havent{
+    margin-top: 1rem;
+    // margin-left: 3rem;
+}
