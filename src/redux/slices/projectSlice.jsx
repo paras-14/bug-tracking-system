@@ -111,6 +111,33 @@ export const getSingleProject = createAsyncThunk("getSingleProject",async(data,{
 })
 
 
+//getSingleProject
+export const updateProject = createAsyncThunk("updateProject",async(data,{rejectWithValue})=>{
+    console.log("updateProject",data);
+    // console.log("bkl->",projects);
+
+    try {
+        const response = await fetch(`http://localhost:2000/update/project`,{
+                method:"PATCH",
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body:JSON.stringify(data)
+                // `${console.log("userbody ",body)}`
+        })
+        // console.log("deleteProjectResponse-> ",response)
+        const result = await response.json();
+        console.log("afterUpdateProject->",result);
+        // nav("/")
+        return result.data;
+    } catch (error) {
+        return rejectWithValue(error.response)
+    }
+})
+
+
+
+
 const initialState={
     projects:[],
     loading:false,
@@ -143,7 +170,7 @@ const projectDetail=createSlice({
         },
         [getAllProjectsOrgLeader.fulfilled]:(state,action)=>{
             state.loading=false;
-            // console.log("Hhaihaihaiha",action.payload)
+            console.log("Hhaihaihaiha",action.payload)
             state.projects=action.payload;
         },
         [getAllProjectsOrgLeader.rejected]:(state,action)=>{
@@ -210,6 +237,23 @@ const projectDetail=createSlice({
             state.loading=false;
             state.SingleProject=action.payload;
             console.log("whieeee ??",action.payload)
+        },
+
+
+
+
+        [updateProject.pending]:(state)=>{
+            state.loading=true;
+        },
+        [updateProject.fulfilled]:(state,action)=>{
+            state.loading=false;
+            // console.log("Hhaihaihaiha",action.payload)
+            state.projects=action.payload;
+        },
+        [updateProject.rejected]:(state,action)=>{
+            state.loading=false;
+            state.projects=action.payload;
+            console.log("updateDone ??",action.payload)
         },
     }
 })

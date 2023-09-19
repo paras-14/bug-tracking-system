@@ -6,10 +6,12 @@ import Home from './routes/Home';
 import Layout from './components/Layout/Layout';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
     <div className="App">
+      {/* <ChakraProvider> */}
       <Provider store={store}>
         <BrowserRouter>
            <Layout>
@@ -29,6 +31,8 @@ function App() {
            </Layout>
         </BrowserRouter>
       </Provider>
+      {/* </ChakraProvider> */}
+
     </div>
   )
 }

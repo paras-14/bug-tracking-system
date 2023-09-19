@@ -6,7 +6,7 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import xyz from "../../assets/xyz.jpg"
 import { FaAngleRight,FaAngleLeft } from "react-icons/fa";
 import SingleProjectModal from '../../components/SingleProjectModal/SingleProjectModal';
-
+import AddMembers from "../../pages/AddMembers/AddMembers"
 
 const AllProjectsLeader = () => {
 
@@ -53,6 +53,7 @@ const AllProjectsLeader = () => {
 
   return ( 
     <>
+      <AddMembers/>
       <SingleProjectModal/>
       <div className="AllProject">
         <img className="AllProjectImage" src={`${xyz}`} alt="" />

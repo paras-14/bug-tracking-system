@@ -160,11 +160,11 @@ const Landing = () => {
       </div>
       <div className="buttons">
         <button id="prev" onClick={handleClickPrev}>
-          {/* <FontAwesomeIcon icon={faAngleLeft} /> */}
+         
           prev
         </button>
         <button id="next" onClick={handleClickNext} >
-          {/* <FontAwesomeIcon icon={faAngleRight} /> */}
+          
           next
         </button>
       </div>

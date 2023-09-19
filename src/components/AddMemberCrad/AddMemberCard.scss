@@ -1,0 +1,55 @@
+
+.AddMemberCard{
+    margin-top: 1rem;
+    // margin-bottom:3rem;
+    width: 150px;
+    color:white;
+    height: 200px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.MemberRole{
+    margin-top: 1rem;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+
+.MemberName{
+    // margin-top: 1rem;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+
+.MemberButtons{
+    width: 90%;
+   margin-top: 2rem;
+   display: flex;
+   justify-content: space-between;
+   height: 40px;
+}
+
+.MemberButton{
+    width:43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.MemberButton button{
+    color: rgb(8, 8, 8);
+    border:none;
+    background-color: transparent;
+    outline: none;
+}
+
+
+
+

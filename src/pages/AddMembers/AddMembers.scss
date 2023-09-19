@@ -1,0 +1,143 @@
+.modal2{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index:2 ;
+}
+
+
+.AddMember{
+    height:100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    margin: auto;
+    // align-items: center;
+    justify-content: center;
+    z-index:20;
+}
+
+.AddMemberContainer{
+    margin-top: 2.5%;
+    height:90%;
+    width: 50%;
+    // border: 2px solid red;
+    display: flex;
+    gap: 3%;
+    // margin-left:5%;
+}
+
+.AddMembersDeveloper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding: 1rem;
+    padding-top: -1rem;
+    width: 50%;
+    border: 2px solid green;
+    // overflow-y: scroll;
+    border-radius: 10% 10% 0% 0%;
+}
+
+.AddMembersTester{
+    // padding: 1rem;
+    width: 50%;
+    border: 2px solid green;
+    // overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10% 10% 0% 0%;
+}
+
+
+
+
+.ShowMembers{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    height:90%;
+    width: 30%;
+    border: 2px solid red;
+    // display: flex;
+    color: aliceblue;
+    border-radius: 10% 10% 0% 0%;
+    // position: relative;
+}
+
+
+.AddMembersDeveloperTitle{
+    // box-sizing: border-box;
+    background-color: aliceblue;
+    height: 40px;
+    color: rgb(13, 13, 14);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // position: sticky;
+}
+
+
+
+
+.AddMembersDeveloper::-webkit-scrollbar,
+.AddMembersTester::-webkit-scrollbar,
+.ShowMembers::-webkit-scrollbar{
+  width: 0; 
+}
+
+.pataNahi{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    height: 55px;
+    // bottom: 0;
+    // position: fixed;
+}
+
+.SubmItMember{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 110px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right,rgb(10, 114, 7), rgb(108, 252, 12));
+    color: #eaeaea;
+    bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ScrollMembers{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-y: scroll;
+    color: #eaeaea;
+}
+
+.ScrollMembers::-webkit-scrollbar{
+    width: 0;
+}
+
+

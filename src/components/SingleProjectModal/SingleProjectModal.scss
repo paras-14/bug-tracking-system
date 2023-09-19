@@ -10,7 +10,7 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
-    z-index:10 ;
+    z-index:1 ;
 }
 
 .overlay {
@@ -19,20 +19,118 @@ body.active-modal {
 }
 .modal-content {
     position: absolute;
-    top: 42%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    padding: 14px 28px;
+    padding: 14px 14px;
     border-radius: 3px;
-    width:500px;
-    z-index: 10;
+    width:65%;
+    z-index: 1;
+    display:flex;
+    height:60%;
 }
+
+.leftProject{
+    position: relative;
+    // transform: rotate(90deg);
+    border: 2px solid red;
+    margin-left:0;
+    width:50%;
+    color: aliceblue;
+    display: flex;
+  flex-direction: column;
+}
+
+.ProjectName{
+    padding-top: 1rem;
+    height: 80px;
+    // padding-left: 40%;
+    display: flex;
+  /* Vertically center the text */
+  justify-content: center; 
+    font-size: 1.6rem;
+}
+
+.ProjectDiv1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    // display: flex;
+    // justify-content: space-between;
+}
+
+
+.ProjectDiv2{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 1rem;
+    // display: flex;
+    // justify-content: space-between;
+}
+
+.ProjectDepartment{
+    margin-top: 1rem;
+}
+
+.ProjectDescription{
+    // margin-top: 1rem;
+        overflow: scroll;   
+}
+
+.ProjectDescription::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.rightProject{
+    overflow: scroll;
+    border: 2px solid green;
+    width:50%;
+    color:white;
+    
+}
+
+.ProjectMembers{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.AddProjectMembers{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.AddProjectMembers button{
+    outline: none;
+    border: none;
+    // margin-left: 8rem;
+    height: 40px;
+    width: 110px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: -3px 6px 10px black;
+    background-image: linear-gradient(to right,rgb(10, 114, 7), rgb(108, 252, 12));
+    color: #eaeaea;
+}
+
+.AllMembers{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    
+}
+
+
 
 .close-modal {
     position: absolute;
-    top: 40px;
-    right: 10px;
+    top: -15px;
+    right: -20px;
     padding: 5px 7px;
     background-color: rgba(240, 248, 255, 0);
     border: none;

@@ -82,20 +82,29 @@ const getAllProjectsDeveloperAndTester=async(req,res,next)=>{
 
 const updateProject=async(req,res,next)=>{
     try {
-        const {members,projectName}=req.body;
+        const {newMembers,projectName}=req.body;
+        // console.log("really ?? ",projectName);
         const existingProjects=await Project.findOne({projectName});
+        // console.log("Really serously ??");
+        // console.log("existing project ",existingProjects);
         if(!existingProjects){
-            throw BadRequestError("Project Name Is Incorrect")
+            // console.log("error");
+            throw new BadRequestError("Project Name Is Incorrect")
         }
-        const updatedProject=await Project.findOneAndUpdate({projectName : projectName},{members:members},{
+        const updatedProject=await Project.findOneAndUpdate({projectName : projectName},{$set:{members:[...existingProjects.members,...newMembers]}},{
             new:true,
             runValidator:true,
           });
+
+          const allProject=await Project.find({});
         
-        res.status(200).send({status:"ok",data:updatedProject})
+        //   console.log("UpdatedProject",updatedProject)
+        res.status(200).send({status:"ok",data:allProject})
     } catch (error) {
         next(error)
     }
+
+    
 
 }
 

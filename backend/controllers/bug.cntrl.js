@@ -62,8 +62,33 @@ const DeleteBug=async(req,res,next)=>{
     }
 }
 
+const updateBug=async(req,res,next)=>{
+    try {
+        const {newMembers,bugName}=req.body;
+        // console.log("Bug Name-> ",bugName);
+        const existingBug=await Bugs.findOne({bugName});
+        console.log("existing Bug modal ",bugName);
+        if(!existingBug){
+            throw new BadRequestError("Bug Name Is Incorrect")
+        }
+        const updatedBug=await Bugs.findOneAndUpdate({bugName : bugName},{$set:{membersBug:[...existingBug.membersBug,...newMembers]}},{
+            new:true,
+            runValidator:true,
+          });
+
+          const allBugs=await Bugs.find({});
+        
+        //   console.log("UpdatedProject",updatedBug)
+        res.status(200).send({status:"ok",data:allBugs})
+    } catch (error) {
+        next(error)
+    }
+
+}
+
 module.exports={
     createBugs,
     getAllBugs,
-    DeleteBug
+    DeleteBug,
+    updateBug
 }

@@ -5,6 +5,8 @@ import {getAllBugs} from "../../redux/slices/bugSlice"
 import BugCard from '../../components/BugCard/BugCard'
 import allBugs from "../../assets/vibrant-autumn-maple-leaves-nature-beauty-showcased-generated-by-ai_188544-15039.webp"
 import { FaAngleRight,FaAngleLeft } from "react-icons/fa";
+import AddMemberTobug from "../../components/AddMemberTobug/AddMemberTobug"
+import BugModal from '../../components/BugModal/BugModal.jsx'
 
 
 const AllBugs = () => {
@@ -52,6 +54,9 @@ const AllBugs = () => {
 
 
   return (
+    <>
+    <AddMemberTobug/>
+    <BugModal/>
     <div className="BugContainer">
       <img className="AllBugImage" src={`${allBugs}`} alt="" />
         <div className="BugHeading">
@@ -81,6 +86,7 @@ const AllBugs = () => {
           <FaAngleRight className="userReactButton" onClick={() => handlePageChange(currentPage + 1)}>Next</FaAngleRight>
       </div> 
     </div>
+    </>
   )
 }
 

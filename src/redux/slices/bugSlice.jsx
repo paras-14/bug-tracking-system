@@ -66,6 +66,30 @@ export const deleteBug= createAsyncThunk("deleteBug",async(data,rejectWithValue)
 })
 
 
+export const updateBug = createAsyncThunk("updateBug",async(data,{rejectWithValue})=>{
+    console.log("updateBug",data);
+    // console.log("bkl->",projects);
+
+    try {
+        const response = await fetch(`http://localhost:2000/update/bug`,{
+                method:"PATCH",
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body:JSON.stringify(data)
+                // `${console.log("userbody ",body)}`
+        })
+        // console.log("deleteProjectResponse-> ",response)
+        const result = await response.json();
+        console.log("afterUpdateBug->",result);
+        // nav("/")
+        return result.data;
+    } catch (error) {
+        return rejectWithValue(error.response)
+    }
+})
+
+
 const initialState = {
     bugs: [],
     loading: false,
@@ -118,6 +142,21 @@ const bugDetail = createSlice({
         [deleteBug.rejected]:(state,action)=>{
             state.loading=false;
             state.bugs=action.payload;
+        },
+
+
+        [updateBug.pending]:(state)=>{
+            state.loading=true;
+        },
+        [updateBug.fulfilled]:(state,action)=>{
+            state.loading=false;
+            // console.log("Hhaihaihaiha",action.payload)
+            state.bugs=action.payload;
+        },
+        [updateBug.rejected]:(state,action)=>{
+            state.loading=false;
+            state.bugs=action.payload;
+            console.log("updateDone ??",action.payload)
         },
     }
 })

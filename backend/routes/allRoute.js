@@ -28,7 +28,7 @@ route.get("/getSingleProject",[],projectController.getSingleProject)
 route.post("/create/bugs",[authentication],bugsController.createBugs)
 route.get("/getAll/bugs",[],bugsController.getAllBugs)
 route.delete("/delete/bug",[],bugsController.DeleteBug)
-
+route.patch("/update/bug",[],bugsController.updateBug)
 
 
 module.exports=route;

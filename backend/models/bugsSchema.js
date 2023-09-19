@@ -29,6 +29,11 @@ const bugsSchema=new mongoose.Schema({
     raiser:{
         type:String,
         unique:false,
+    },
+    membersBug:{
+        type:Array,
+        unique:false,
+        default:[],
     }
 },
 {timestamps:true}

@@ -41,7 +41,7 @@ const ProjectCard = ({project,id }) => {
             {/* <div className="getProjectInput">Client Name:{project.clientName}</div> */}
             <div className="getProjectInput">Manager:{project.leader}</div>
             <div className="viewMore">
-               <FaPlusCircle onClick={()=>{combinedFunction(id)}}/>
+               <FaPlusCircle onClick={()=>{combinedFunction(project.projectName)}}/>
             </div>
             {/* <div className="getProjectInput">Department:{project.department}</div> */}
             {/* <div className="getProjectInput">Description:{project.description}</div> */}

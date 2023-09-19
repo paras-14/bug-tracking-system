@@ -1,0 +1,54 @@
+.SingleProjectCard{
+    height:300px;
+    width:auto;
+    padding: 15px;
+}
+
+.upperSingleProjectCard{
+    height:40%;
+    display: flex;
+    justify-content: center;
+    // padding-left:30%;
+}
+
+.upperSingleProjectCard2{
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    border: 2px solid red;
+    width:80%;
+    
+}
+
+.upperSingleProjectCard img{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+}
+
+
+
+
+.lowerSingleProjectCard{
+    margin-top: 0.1rem;
+    height:60%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.lowerSingleProjectCard2{
+    padding-top: 1rem;
+    padding-left: 4%;
+    border: 2px solid red;
+    width:80%;
+    white-space: normal;
+    /* Ensure text wraps within the div */
+    word-wrap: break-word;
+    /* Set box-sizing to border-box to include padding and border in the defined width and height */
+    box-sizing: border-box;
+}
+
+.singleProjectCardContent{
+    margin-bottom: 1rem;
+}

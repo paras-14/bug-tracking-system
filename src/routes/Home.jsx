@@ -12,6 +12,9 @@ import AllProjectsTester from '../pages/AllProjects/AllProjectsTester'
 import CreateProject from '../pages/CreateProject/CreateProject'
 import AllBugs from '../pages/AllBugs/AllBugs'
 import CreateBug from '../pages/CreateBug/CreateBug'
+import AddMembers from '../pages/AddMembers/AddMembers'
+import Chatpage from '../pages/Chat/ChatPage/Chatpage'
+import HomeChatPage from '../pages/Chat/HomeChatPage/HomeChatPage'
 // import Navbar from '../components/Navbar/Navbar';
 
 
@@ -34,6 +37,9 @@ const Home = () => {
         <Route path="/createProject" element={<CreateProject/>}/>
         <Route path="/allBugs" element={<AllBugs/>}/>
         <Route path="/createBug" element={<CreateBug/>}/>
+        <Route path="/AddMembers" element={<AddMembers/>}/>
+        <Route path="/ChatHome" element={<Chatpage/>}/>
+        <Route path="/ChatPage" element={<HomeChatPage/>}/>
       </Routes>
     {/* </div> */}
    </>
