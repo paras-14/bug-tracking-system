@@ -15,10 +15,8 @@ const authentication = async (req, res , next) => {
   
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
-      // cpnsole.log("Okkk")
       const {email,username,phone,role,address}=decoded;
       req.auth={email,username,phone,role,address};
-      // console.log(`hiii ${req.auth.username}`)
       next();
     } catch (error) {
       res.send({
@@ -26,7 +24,6 @@ const authentication = async (req, res , next) => {
         message:'Not authorized to access this route'
       })
     }
-    // res.send('Hiiii')
 }
 
 module.exports=authentication;

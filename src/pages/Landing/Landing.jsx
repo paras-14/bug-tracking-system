@@ -5,9 +5,6 @@ import image2 from "../../assets/userMain.jpg"
 import image3 from "../../assets/projectMain.webp"
 import image4 from "../../assets/bugMain2.webp"
 import { getSingleUser } from '../../redux/slices/userSlices';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { AiFillLock } from 'react-icons/fa';
-// import { AiFillLock } from "@fortawesome/free-solid-svg-icons";
 
 import Navbar from '../../components/Navbar/Navbar';
 import { useDispatch, useSelector } from 'react-redux'

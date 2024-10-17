@@ -13,12 +13,16 @@ const OrgLead = () => {
 
     const getUserData = (e) => {
         setUsers({ ...users, [e.target.name]: e.target.value })
-        // console.log(users)
+        console.log("orgUsers",users)
     }
 
     const handleSubmit = () => {
         console.log("USers-> ", users)
-        dispatch(createUser(users))
+        const userWithRole = {
+            ...users, 
+            role: "Organisation Leader" 
+        };
+        dispatch(createUser(userWithRole))
     }
 
     return (
@@ -49,7 +53,7 @@ const OrgLead = () => {
                     </div>
                     <div className="orgBUTTONS" >
                         <button type="submit" className="ORGbtnnSUBMIT" onClick={(e) => { e.preventDefault(); handleSubmit(); }}>SUBMIT</button>
-                        <button type="submit" className="ORGbtnnSIGNUP"><a href="/signup">SIGNUP</a></button>
+                        <button type="button" className="ORGbtnnSIGNUP"><a href="/signup">SIGNUP</a></button>
                     </div>
                 </div>
             </div>

@@ -34,8 +34,11 @@ const createUser = async (req, res, next) => {
     image:""
   })
 
+  // role:role?role:"Organisation Leader";
   // const userEmail=newUser.email;
   const createUser = await newUser.save();
+
+  // role=""?"Organisation Leader":role;
 
   sendEmails({email,role,uniqueCode})
 
@@ -115,7 +118,7 @@ const loginUser = async (req, res, next) => {
     }
    
     if (await bcrypt.compare(password, oldUser.password)) {
-      const token = jwt.sign({email: oldUser.email, username: oldUser.username,phone: oldUser.phone,role:oldUser.role,address:oldUser.address}, `${process.env.JWT_SECRET}`)
+      const token = jwt.sign({email: oldUser.email, username: oldUser.username,phone: oldUser.phone,role:oldUser.role,address:oldUser.address}, `${process.env.JWT_SECRET}`,{ expiresIn: '1h' })
   
       if (res.status(201)) {
         return res.status(201).send({status:"ok",token :  token })

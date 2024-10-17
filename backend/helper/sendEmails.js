@@ -50,8 +50,6 @@ const sendEmails=async({email,role,uniqueCode})=>{
            return error
      }
 
-    //  res.send("HEllooo chhodi")
-
 
 }
 

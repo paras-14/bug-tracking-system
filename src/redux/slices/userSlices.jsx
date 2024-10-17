@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 
 
 //CreateUser
-export const createUser = createAsyncThunk("createUser",async(data,rejectWithValue)=>{
+export const createUser = createAsyncThunk("createUser",async(data,{rejectWithValue})=>{
     const response=await fetch('http://localhost:2000/create/user',{
         method:"POST",
         headers:{
@@ -16,7 +16,7 @@ export const createUser = createAsyncThunk("createUser",async(data,rejectWithVal
         const result=await response.json();
         console.log("postUser->",result.data);
         if(result.status=="ok"){
-            toast.success('You Are Now An Organisation Leader', {
+            toast.success(`user Created`, {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -40,7 +40,8 @@ export const createUser = createAsyncThunk("createUser",async(data,rejectWithVal
         }
         return result.data;
     } catch (error) {
-        toast.error((result.msg || result.message), {
+        console.error("Error creating user:", error);
+        toast.error("An error occurred while creating the user.", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -49,9 +50,10 @@ export const createUser = createAsyncThunk("createUser",async(data,rejectWithVal
             draggable: true,
             progress: undefined,
             theme: "dark",
-          });
-        return rejectWithValue(error.response)
+        });
+        return rejectWithValue(error.message);
     }
+    
 
 })
 
@@ -240,96 +242,84 @@ const initialState={
     error:null,
     SingleUser:{},
 }
-
-const userDetail=createSlice({
-    name:"userDetail",
+const userDetail = createSlice({
+    name: "userDetail",
     initialState,
-    extraReducers:{
-        [createUser.pending]:(state)=>{
-            state.loading=true;
-        },
-        [createUser.fulfilled]:(state,action)=>{
-            state.loading=false;
-            console.log("shit is this what ",action.payload)
-            state.users.push(action.payload);
-        },
-        [createUser.rejected]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
+    extraReducers: (builder) => {
+        builder
+            .addCase(createUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(createUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users.push(action.payload);
+            })
+            .addCase(createUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
 
+            .addCase(updateUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(updateUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users.push(action.payload);
+            })
+            .addCase(updateUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
 
-        [updateUser.pending]:(state)=>{
-            state.loading=true;
-        },
-        [updateUser.fulfilled]:(state,action)=>{
-            state.loading=false;
-            state.users.push(action.payload);
-        },
-        [updateUser.rejected]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
+            .addCase(loginUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(loginUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.token = action.payload;
+                state.users.push(action.payload);
+            })
+            .addCase(loginUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
 
+            .addCase(getAllUsers.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getAllUsers.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = action.payload;
+            })
+            .addCase(getAllUsers.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
 
-        [loginUser.pending]:(state)=>{
-            state.loading=true;
-        },
-        [loginUser.fulfilled]:(state,action)=>{
-            state.loading=false;
-            state.token=action.payload; 
-            state.users.push(action.payload);
-        },
-        [loginUser.rejected]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
+            .addCase(getSingleUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(getSingleUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.SingleUser = action.payload;
+            })
+            .addCase(getSingleUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
 
+            .addCase(deleteUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(deleteUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = action.payload;
+            })
+            .addCase(deleteUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            });
+    },
+});
 
-        [getAllUsers.pending]:(state)=>{
-            state.loading=true;
-        },
-        [getAllUsers.fulfilled]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
-        [getAllUsers.rejected]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
-        
-
-        [getSingleUser.pending]:(state)=>{
-            // console.log("chup Mc ?");
-            state.loading=true;
-        },
-        [getSingleUser.fulfilled]:(state,action)=>{
-            // console.log("Kuchh Huaa Kyya ?");
-            state.loading=false;
-            state.SingleUser=action.payload;
-        },
-        [getSingleUser.rejected]:(state,action)=>{
-            state.loading=false;
-            state.SingleUser=action.payload;
-        },
-        
-
-        [deleteUser.pending]:(state)=>{
-            // console.log("chup Mc ?");
-            state.loading=true;
-        },
-        [deleteUser.fulfilled]:(state,action)=>{
-            state.loading=false;
-            console.log("Deleted Users-> ",action.payload)
-            state.users=action.payload;
-        },
-        [deleteUser.rejected]:(state,action)=>{
-            state.loading=false;
-            state.users=action.payload;
-        },
-    }
-})
-
-// export const {setEmail,setPassword,setUniqueCode}=userDetail.actions
-
-export default userDetail.reducer
+export default userDetail.reducer;
